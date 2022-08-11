@@ -8,6 +8,7 @@ Here you will find:
 🐳 Docker images for using in [Azure Pipelines Container Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
 
 * [.NET](https://github.com/swissgrc/docker-azure-pipelines-dotnet)
+* [Eclipse Temurin OpenJDK](https://github.com/swissgrc/docker-azure-pipelines-openjdk)
 * [Azure CLI](https://github.com/swissgrc/docker-azure-pipelines-azurecli)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
