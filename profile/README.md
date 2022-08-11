@@ -13,6 +13,7 @@ Here you will find:
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
+* [Sonar Scanner CLI](https://github.com/swissgrc/docker-azure-pipelines-sonarscannercli)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
 📦 NPM packages:
