@@ -14,6 +14,7 @@ Here you will find:
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
 * [Sonar Scanner CLI](https://github.com/swissgrc/docker-azure-pipelines-sonarscannercli)
+* [Sonar Scanner for .NET](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
 📦 NPM packages:
