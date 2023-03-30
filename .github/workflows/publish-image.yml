@@ -47,7 +47,7 @@ jobs:
       - name: Extract trivy image-ref
         id: extract
         run: |
-          firstTag=$(jq --raw-output '.tags[0]' <<< "${{ steps.meta.outputs.json }}")
+          firstTag=$(jq --raw-output '.tags[0]' <<< '${{ steps.meta.outputs.json }}')
           echo "Found $firstTag as first tag"
           echo "imageRef=$firstTag" >> $GITHUB_OUTPUT
 
