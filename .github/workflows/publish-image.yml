@@ -25,7 +25,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@507c2f2dc502c992ad446e3d7a5dfbe311567a96 # v4.3.0
         with:
-          images: ${{ inputs.image-name }}
+          images: |
+            ${{ inputs.image-name }}
+            ghcr.io/${{ inputs.image-name }}
           tags: |
             type=ref,event=tag
             type=ref,event=pr
@@ -74,6 +76,15 @@ jobs:
         with:
           username: ${{ secrets.docker-username }}
           password: ${{ secrets.docker-password }}
+
+      # Login to GitHub Container Registry if not PR build
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a # tag=v2.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.gh-token }}
 
       # Publish Docker image for CI builds if not PR build
       - name: Push container image
