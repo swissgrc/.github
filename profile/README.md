@@ -17,6 +17,9 @@ Here you will find:
 * [Sonar Scanner for .NET](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
+Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
+or [Docker Hub](https://hub.docker.com/u/swissgrc).
+
 📦 NPM packages:
 
 * [PostCSS plugin to remove font faces formats](https://github.com/swissgrc/postcss-remove-font-face-format)
