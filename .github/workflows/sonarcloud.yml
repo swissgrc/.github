@@ -1,0 +1,24 @@
+on:
+  workflow_call:
+    secrets:
+      gh-token:
+        required: true
+      sonar-token:
+        required: true
+
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
+        with:
+          # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@db501078e936e4b4c8773d1bb949ba9ddb7b6b6a # v1.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh-token }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.sonar-token }}
