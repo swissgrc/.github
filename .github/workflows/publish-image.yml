@@ -107,7 +107,7 @@ jobs:
       # Update Readme on Docker Hub
       - name: Publish README to Docker Hub
         if: github.event_name != 'pull_request'
-        uses: peter-evans/dockerhub-description@4b1a4bb4846dfa5c7b245358b948fc6dd57891c0 # v3.4.0
+        uses: peter-evans/dockerhub-description@579f64ca0abced29dbbc44ab4c6a0b9e33ab3588 # v3.4.1
         with:
           username: ${{ secrets.docker-username }}
           password: ${{ secrets.docker-password }}
