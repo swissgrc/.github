@@ -11,6 +11,7 @@ Here you will find:
 * [Eclipse Temurin OpenJDK](https://github.com/swissgrc/docker-azure-pipelines-openjdk)
 * [Azure CLI](https://github.com/swissgrc/docker-azure-pipelines-azurecli)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
+* [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
 * [Sonar Scanner CLI](https://github.com/swissgrc/docker-azure-pipelines-sonarscannercli)
