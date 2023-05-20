@@ -4,6 +4,10 @@ on:
       image-name:
         required: true
         type: string
+      latest-tag:
+        required: true
+        type: boolean
+        default: true
     secrets:
       gh-token:
         required: true
@@ -28,6 +32,8 @@ jobs:
           images: |
             ${{ inputs.image-name }}
             ghcr.io/${{ inputs.image-name }}
+          flavor: |
+            latest=${{ inputs.latest-tag == true && 'auto' || 'false' }}
           tags: |
             type=ref,event=tag
             type=ref,event=pr
