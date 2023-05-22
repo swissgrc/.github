@@ -4,9 +4,12 @@ on:
       image-name:
         required: true
         type: string
-      latest-tag:
+      default-latest-tag:
         type: boolean
         default: true
+      additional-latest-tag-name:
+        type: string
+        default: ''
       unstable-tag-name:
         type: string
         default: unstable
@@ -26,6 +29,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
+      # Creates an expression to be used in docker/metadata-action
+      - name: Expression for additional latest tag
+        id: latest-tag
+        run: |
+          tagName="${{ inputs.additional-latest-tag-name }}"
+          if [[ -n ${tagName} ]]; then
+            expression="type=raw,value=${tagName},enable=${{ github.event_name == 'release' }}"
+          else
+            expression=""
+          fi
+          echo "expression=${expression}" >> $GITHUB_OUTPUT
+
       # Extract metadata (tags, labels) for Docker
       - name: Extract Docker metadata
         id: meta
@@ -35,10 +50,12 @@ jobs:
             ${{ inputs.image-name }}
             ghcr.io/${{ inputs.image-name }}
           flavor: |
-            latest=${{ inputs.latest-tag == true && 'auto' || 'false' }}
+            latest=${{ inputs.default-latest-tag == true && 'auto' || 'false' }}
           tags: |
             type=ref,event=tag
             type=ref,event=pr
+            # set additional latest tag if available
+            ${{ steps.latest-tag.outputs.expression }}
             # set unstable tag for develop branch
             type=raw,value=${{ inputs.unstable-tag-name }},enable=${{ github.ref == format('refs/heads/{0}', 'develop') }}
 
