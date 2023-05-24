@@ -7,6 +7,9 @@ on:
       latest-tag:
         type: boolean
         default: true
+      unstable-tag-name:
+        type: string
+        default: unstable
     secrets:
       gh-token:
         required: true
@@ -37,7 +40,7 @@ jobs:
             type=ref,event=tag
             type=ref,event=pr
             # set unstable tag for develop branch
-            type=raw,value=unstable,enable=${{ github.ref == format('refs/heads/{0}', 'develop') }}
+            type=raw,value=${{ inputs.unstable-tag-name }},enable=${{ github.ref == format('refs/heads/{0}', 'develop') }}
 
       # Build Docker image with Buildx
       - name: Build Docker image
