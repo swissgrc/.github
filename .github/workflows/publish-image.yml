@@ -10,9 +10,15 @@ on:
       additional-latest-tag-name:
         type: string
         default: ''
-      unstable-tag-name:
+      default-unstable-tag:
+        type: boolean
+        default: true
+      additional-unstable-tag-name:
         type: string
-        default: unstable
+        default: ''
+      release-tag-suffix:
+        type: string
+        default: ''
     secrets:
       gh-token:
         required: true
@@ -31,15 +37,22 @@ jobs:
 
       # Creates an expression to be used in docker/metadata-action
       - name: Expression for additional latest tag
-        id: latest-tag
+        id: additional-tags
         run: |
-          tagName="${{ inputs.additional-latest-tag-name }}"
-          if [[ -n ${tagName} ]]; then
-            expression="type=raw,value=${tagName},enable=${{ github.event_name == 'release' }}"
+          latestTagName="${{ inputs.additional-latest-tag-name }}"
+          if [[ -n ${latestTagName} ]]; then
+            latestExpression="type=raw,value=${latestTagName},enable=${{ github.event_name == 'release' }}"
           else
-            expression=""
+            latestExpression=""
           fi
-          echo "expression=${expression}" >> $GITHUB_OUTPUT
+          unstableTagName="${{ inputs.additional-unstable-tag-name }}"
+          if [[ -n ${unstableTagName} ]]; then
+            unstableExpression="type=raw,value=${unstableTagName},enable=${{ github.ref == format('refs/heads/{0}', 'develop') }}"
+          else
+            unstableExpression=""
+          fi
+          echo "latest-expression=${latestExpression}" >> $GITHUB_OUTPUT
+          echo "unstable-expression=${unstableExpression}" >> $GITHUB_OUTPUT
 
       # Extract metadata (tags, labels) for Docker
       - name: Extract Docker metadata
@@ -52,12 +65,13 @@ jobs:
           flavor: |
             latest=${{ inputs.default-latest-tag == true && 'auto' || 'false' }}
           tags: |
-            type=ref,event=tag
+            type=ref,event=tag,suffix=${{ inputs.release-tag-suffix == '' && '' || '-' }}${{ inputs.release-tag-suffix }}
             type=ref,event=pr
-            # set additional latest tag if available
-            ${{ steps.latest-tag.outputs.expression }}
+            # set additional tags if available
+            ${{ steps.additional-tags.outputs.latest-expression }}
+            ${{ steps.additional-tags.outputs.unstable-expression }}
             # set unstable tag for develop branch
-            type=raw,value=${{ inputs.unstable-tag-name }},enable=${{ github.ref == format('refs/heads/{0}', 'develop') }}
+            type=raw,value=unstable,enable=${{ inputs.default-unstable-tag == true && github.ref == format('refs/heads/{0}', 'develop') }}
 
       # Build Docker image with Buildx
       - name: Build Docker image
