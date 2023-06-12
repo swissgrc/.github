@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
 
       # Creates an expression to be used in docker/metadata-action
-      - name: Expression for additional latest tag
+      - name: Expressions for additional tags
         id: additional-tags
         run: |
           latestTagName="${{ inputs.additional-latest-tag-name }}"
@@ -70,7 +70,7 @@ jobs:
             # set additional tags if available
             ${{ steps.additional-tags.outputs.latest-expression }}
             ${{ steps.additional-tags.outputs.unstable-expression }}
-            # set unstable tag for develop branch
+            # set default unstable tag for develop branch
             type=raw,value=unstable,enable=${{ inputs.default-unstable-tag == true && github.ref == format('refs/heads/{0}', 'develop') }}
 
       # Build Docker image with Buildx
