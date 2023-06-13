@@ -65,7 +65,7 @@ jobs:
           flavor: |
             latest=${{ inputs.default-latest-tag == true && 'auto' || 'false' }}
           tags: |
-            type=ref,event=tag,suffix=${{ inputs.release-tag-suffix == '' && '' || '-' }}${{ inputs.release-tag-suffix }}
+            type=ref,event=tag,suffix=${{ inputs.release-tag-suffix != '' && '-' || '' }}${{ inputs.release-tag-suffix }}
             type=ref,event=pr
             # set additional tags if available
             ${{ steps.additional-tags.outputs.latest-expression }}
