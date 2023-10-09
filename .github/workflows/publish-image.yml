@@ -102,7 +102,7 @@ jobs:
       # Publish scan report to GitHub
       - name: Publish scan report to GitHub
         if: ${{ github.event_name != 'release' && always() }}
-        uses: github/codeql-action/upload-sarif@2cb752a87e96af96708ab57187ab6372ee1973ab # v2.22.0
+        uses: github/codeql-action/upload-sarif@fdcae64e1484d349b3366718cdfef3d404390e85 # v2.22.1
         with:
           sarif_file: trivy-results.sarif
 
