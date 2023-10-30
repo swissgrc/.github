@@ -10,6 +10,7 @@ Here you will find:
 * [Docker CLI](https://github.com/swissgrc/docker-azure-pipelines-dockercli)
 * [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
 * [.NET 6](https://github.com/swissgrc/docker-azure-pipelines-dotnet-6) | [.NET 7](https://github.com/swissgrc/docker-azure-pipelines-dotnet-7)
+* [Node.js 20 with .NET 7](https://github.com/swissgrc/docker-azure-pipelines-node20-net7)
 * [Eclipse Temurin OpenJDK 17](https://github.com/swissgrc/docker-azure-pipelines-openjdk-17)
 * [Azure CLI with .NET 6](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net6) | [Azure CLI with .NET 7](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net7)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
