@@ -24,6 +24,10 @@ Here you will find:
 Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
 or [Docker Hub](https://hub.docker.com/u/swissgrc).
 
+🧩 NuGet packages:
+
+* [Statiq.Alerts]([https://github.com/swissgrc/Statiq.Alerts)
+
 📦 NPM packages:
 
 * [PostCSS plugin to remove font faces formats](https://github.com/swissgrc/postcss-remove-font-face-format)
