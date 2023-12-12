@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@e2a1ee7c31ee491f1e09c74535b1c0d3e9f5cd82 # v2.1.0
+        uses: SonarSource/sonarcloud-github-action@49e6cd3b187936a73b8280d59ffd9da69df63ec9 # v2.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.gh-token }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.sonar-token }}
