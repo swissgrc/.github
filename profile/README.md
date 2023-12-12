@@ -12,7 +12,7 @@ Here you will find:
 * [.NET 6](https://github.com/swissgrc/docker-azure-pipelines-dotnet-6) | [.NET 7](https://github.com/swissgrc/docker-azure-pipelines-dotnet-7) | [.NET 8](https://github.com/swissgrc/docker-azure-pipelines-dotnet-8)
 * [Node.js 20 with .NET 7](https://github.com/swissgrc/docker-azure-pipelines-node20-net7)
 * [Eclipse Temurin OpenJDK 17](https://github.com/swissgrc/docker-azure-pipelines-openjdk-17)
-* [Azure CLI with .NET 6](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net6) | [Azure CLI with .NET 7](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net7)
+* [Azure CLI with .NET 6](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net6) | [Azure CLI with .NET 7](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net7) | [Azure CLI with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net8)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
