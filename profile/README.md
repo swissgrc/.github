@@ -18,7 +18,7 @@ Here you will find:
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
 * [Sonar Scanner CLI](https://github.com/swissgrc/docker-azure-pipelines-sonarscannercli)
-* [Sonar Scanner for .NET 6](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild-6) | [Sonar Scanner for .NET 7](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild-7)
+* [Sonar Scanner for .NET 6](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild-6) | [Sonar Scanner for .NET 7](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild-7) | [Sonar Scanner for .NET 8](https://github.com/swissgrc/docker-azure-pipelines-sonarscannermsbuild-8)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
 Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
