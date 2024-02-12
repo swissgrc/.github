@@ -26,7 +26,7 @@ or [Docker Hub](https://hub.docker.com/u/swissgrc).
 
 🧩 NuGet packages:
 
-* [Statiq.Alerts]([https://github.com/swissgrc/Statiq.Alerts)
+* [Statiq.Alerts](https://github.com/swissgrc/Statiq.Alerts)
 
 📦 NPM packages:
 
