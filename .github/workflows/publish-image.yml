@@ -75,7 +75,7 @@ jobs:
 
       # Build Docker image with Buildx
       - name: Build Docker image
-        uses: docker/build-push-action@94f8f8c2eec4bc3f1d78c1755580779804cb87b2 # v6.0.1
+        uses: docker/build-push-action@f6010ea70151369b06f0194be1051fbbdff851b2 # v6.0.2
         with:
           context: .
           push: false
@@ -135,7 +135,7 @@ jobs:
 
       # Publish Docker image for CI builds if not PR build
       - name: Push container image
-        uses: docker/build-push-action@94f8f8c2eec4bc3f1d78c1755580779804cb87b2 # v6.0.1
+        uses: docker/build-push-action@f6010ea70151369b06f0194be1051fbbdff851b2 # v6.0.2
         if: github.event_name != 'pull_request'
         with:
           context: .
