@@ -93,7 +93,7 @@ jobs:
       # Scan Docker image (not for release builds since we will have multiple tags)
       - name: Scan Docker image
         if: github.event_name != 'release'
-        uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8 # 0.24.0
+        uses: aquasecurity/trivy-action@f781cce5aab226378ee181d764ab90ea0be3cdd8 # 0.25.0
         with:
           image-ref: ${{ steps.extract.outputs.imageRef }}
           format: 'sarif'
@@ -109,7 +109,7 @@ jobs:
       # Create Software Bill of Materials (SBOM) (not for release builds since we will have multiple tags)
       - name: Create Software Bill of Materials (SBOM)
         if: github.event_name == 'push'
-        uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8 # 0.24.0
+        uses: aquasecurity/trivy-action@f781cce5aab226378ee181d764ab90ea0be3cdd8 # 0.25.0
         with:
           image-ref: ${{ steps.extract.outputs.imageRef }}
           format: 'github'
