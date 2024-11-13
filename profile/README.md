@@ -9,7 +9,7 @@ Here you will find:
 
 * [Docker CLI](https://github.com/swissgrc/docker-azure-pipelines-dockercli)
 * [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
-* [.NET 6](https://github.com/swissgrc/docker-azure-pipelines-dotnet-6) | [.NET 8](https://github.com/swissgrc/docker-azure-pipelines-dotnet-8)
+* [.NET 6](https://github.com/swissgrc/docker-azure-pipelines-dotnet-6) | [.NET 8](https://github.com/swissgrc/docker-azure-pipelines-dotnet-8) | [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9)
 * [Node.js 20 with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-node20-net8) | [Node.js 22 with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-node22-net8)
 * [Eclipse Temurin OpenJDK 17](https://github.com/swissgrc/docker-azure-pipelines-openjdk-17) | [Eclipse Temurin OpenJDK 21](https://github.com/swissgrc/docker-azure-pipelines-openjdk-21)
 * [Azure CLI with .NET 6](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net6) | [Azure CLI with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net8)
