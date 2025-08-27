@@ -18,6 +18,70 @@ Here you will find:
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
+```mermaid
+graph TB
+    docker[azure-pipelines-dockercli]
+    click docker "https://github.com/swissgrc/docker-azure-pipelines-dockercli"
+
+    git[azure-pipelines-git]
+    click git "https://github.com/swissgrc/docker-azure-pipelines-git"
+
+    dotnet8[azure-pipelines-dotnet<br>8.x.x]
+    click dotnet8 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-8"
+    dotnet9[azure-pipelines-dotnet<br>9.x.x]
+    click dotnet9 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-9"
+
+    node20_8[azure-pipelines-node<br>20.x.x-net8]
+    click node20_8 "https://github.com/swissgrc/docker-azure-pipelines-node20-net8"
+    node22_8[azure-pipelines-node<br>22.x.x-net8]
+    click node22_8 "https://github.com/swissgrc/docker-azure-pipelines-node22-net8"
+    node22_9[azure-pipelines-node<br>22.x.x-net9]
+    click node22_9 "https://github.com/swissgrc/docker-azure-pipelines-node22-net9"
+
+    az8[azure-pipelines-azurecli<br>x.y.z-net8]
+    click az8 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net8"
+    az9[azure-pipelines-azurecli<br>x.y.z-net9]
+    click az9 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9"
+
+    terraform[azure-pipelines-terraform]
+    click terraform "https://github.com/swissgrc/docker-azure-pipelines-terraform"
+    packer[azure-pipelines-packer]
+    click packer "https://github.com/swissgrc/docker-azure-pipelines-packer"
+    helm[azure-pipelines-helm]
+    click helm "https://github.com/swissgrc/docker-azure-pipelines-helm"
+
+    markdownlint[azure-pipelines-markdownlint]
+    click markdownlint "https://github.com/swissgrc/docker-azure-pipelines-markdownlint"
+
+    renovate[azure-pipelines-renovate]
+    click renovate "https://github.com/swissgrc/docker-azure-pipelines-renovate"
+
+    %% External Images
+    nodejs[Official Node.js Image]
+    click nodejs "https://hub.docker.com/_/node"
+
+    %% Inheritance relationships (top-down)
+    docker --> git
+    
+    git --> dotnet8
+    git --> dotnet9
+
+    dotnet8 --> node20_8
+    dotnet8 --> node22_8
+    dotnet9 --> node22_9
+
+    dotnet8 --> az8
+    dotnet9 --> az9
+
+    az9 --> terraform
+    az9 --> packer
+    az9 --> helm
+
+    nodejs --> markdownlint
+
+    node22_9 --> renovate
+```
+
 Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
 or [Docker Hub](https://hub.docker.com/u/swissgrc).
 
