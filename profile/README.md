@@ -15,6 +15,7 @@ Here you will find:
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
+* [Playwright](https://github.com/swissgrc/docker-azure-pipelines-playwright)
 * [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
 * [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
 
@@ -48,6 +49,9 @@ graph TB
     helm[azure-pipelines-helm]
     click helm "https://github.com/swissgrc/docker-azure-pipelines-helm"
 
+    playwright[azure-pipelines-playwright]
+    click playwright "https://github.com/swissgrc/docker-azure-pipelines-playwright"
+
     markdownlint[azure-pipelines-markdownlint]
     click markdownlint "https://github.com/swissgrc/docker-azure-pipelines-markdownlint"
 
@@ -73,6 +77,8 @@ graph TB
     az9 --> terraform
     az9 --> packer
     az9 --> helm
+
+    node22_9 --> playwright
 
     nodejs --> markdownlint
 
