@@ -9,9 +9,9 @@ Here you will find:
 
 * [Docker CLI](https://github.com/swissgrc/docker-azure-pipelines-dockercli)
 * [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
-* [.NET 8](https://github.com/swissgrc/docker-azure-pipelines-dotnet-8) | [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9)
-* [Node.js 22 with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-node22-net8) | [Node.js 22 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node22-net9)
-* [Azure CLI with .NET 8](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net8) | [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9)
+* [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9)
+* [Node.js 22 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node22-net9)
+* [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
@@ -27,18 +27,12 @@ graph TB
     git[azure-pipelines-git]
     click git "https://github.com/swissgrc/docker-azure-pipelines-git"
 
-    dotnet8[azure-pipelines-dotnet<br>8.x.x]
-    click dotnet8 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-8"
     dotnet9[azure-pipelines-dotnet<br>9.x.x]
     click dotnet9 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-9"
 
-    node22_8[azure-pipelines-node<br>22.x.x-net8]
-    click node22_8 "https://github.com/swissgrc/docker-azure-pipelines-node22-net8"
     node22_9[azure-pipelines-node<br>22.x.x-net9]
     click node22_9 "https://github.com/swissgrc/docker-azure-pipelines-node22-net9"
 
-    az8[azure-pipelines-azurecli<br>x.y.z-net8]
-    click az8 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net8"
     az9[azure-pipelines-azurecli<br>x.y.z-net9]
     click az9 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9"
 
@@ -64,14 +58,11 @@ graph TB
 
     %% Inheritance relationships (top-down)
     docker --> git
-    
-    git --> dotnet8
+
     git --> dotnet9
 
-    dotnet8 --> node22_8
     dotnet9 --> node22_9
 
-    dotnet8 --> az8
     dotnet9 --> az9
 
     az9 --> terraform
