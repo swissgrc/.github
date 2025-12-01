@@ -73,11 +73,11 @@ graph TB
     az9 --> packer
     az9 --> helm
 
-    node22_9 --> playwright
+    node24_9 --> playwright
 
     nodejs --> markdownlint
 
-    node22_9 --> renovate
+    node24_9 --> renovate
 ```
 
 Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
