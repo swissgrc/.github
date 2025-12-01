@@ -11,6 +11,7 @@ Here you will find:
 * [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
 * [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9)
 * [Node.js 22 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node22-net9)
+* [Node.js 24 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node24-net9)
 * [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
@@ -32,6 +33,8 @@ graph TB
 
     node22_9[azure-pipelines-node<br>22.x.x-net9]
     click node22_9 "https://github.com/swissgrc/docker-azure-pipelines-node22-net9"
+    node24_9[azure-pipelines-node<br>24.x.x-net9]
+    click node24_9 "https://github.com/swissgrc/docker-azure-pipelines-node24-net9"
 
     az9[azure-pipelines-azurecli<br>x.y.z-net9]
     click az9 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9"
@@ -62,6 +65,7 @@ graph TB
     git --> dotnet9
 
     dotnet9 --> node22_9
+    dotnet9 --> node24_9
 
     dotnet9 --> az9
 
