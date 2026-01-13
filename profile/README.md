@@ -9,10 +9,10 @@ Here you will find:
 
 * [Docker CLI](https://github.com/swissgrc/docker-azure-pipelines-dockercli)
 * [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
-* [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9)
+* [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9) | [.NET 10](https://github.com/swissgrc/docker-azure-pipelines-dotnet-10)
 * [Node.js 22 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node22-net9)
-* [Node.js 24 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node24-net9)
-* [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9)
+* [Node.js 24 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node24-net9) | [Node.js 24 with .NET 10](https://github.com/swissgrc/docker-azure-pipelines-node24-net10)
+* [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9) | [Azure CLI with .NET 10](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net10)
 * [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
 * [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
 * [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
@@ -30,14 +30,20 @@ graph TB
 
     dotnet9[azure-pipelines-dotnet<br>9.x.x]
     click dotnet9 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-9"
+    dotnet10[azure-pipelines-dotnet<br>10.x.x]
+    click dotnet10 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-10"
 
     node22_9[azure-pipelines-node<br>22.x.x-net9]
     click node22_9 "https://github.com/swissgrc/docker-azure-pipelines-node22-net9"
     node24_9[azure-pipelines-node<br>24.x.x-net9]
     click node24_9 "https://github.com/swissgrc/docker-azure-pipelines-node24-net9"
+    node24_10[azure-pipelines-node<br>24.x.x-net10]
+    click node24_10 "https://github.com/swissgrc/docker-azure-pipelines-node24-net10"
 
     az9[azure-pipelines-azurecli<br>x.y.z-net9]
     click az9 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9"
+    az10[azure-pipelines-azurecli<br>x.y.z-net10]
+    click az10 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net10"
 
     terraform[azure-pipelines-terraform]
     click terraform "https://github.com/swissgrc/docker-azure-pipelines-terraform"
@@ -63,11 +69,14 @@ graph TB
     docker --> git
 
     git --> dotnet9
+    git --> dotnet10
 
     dotnet9 --> node22_9
-    dotnet9 --> node24_9
+    dotnet9 --> node24_9    
+    dotnet10 --> node24_10
 
     dotnet9 --> az9
+    dotnet10 --> az10
 
     az9 --> terraform
     az9 --> packer
