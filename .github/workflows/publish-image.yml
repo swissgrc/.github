@@ -143,11 +143,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+      # Temporarily disabled as Docker OAT does not allow them 
       # Update Readme on Docker Hub
-      - name: Publish README to Docker Hub
-        if: github.event_name != 'pull_request'
-        uses: peter-evans/dockerhub-description@1b9a80c056b620d92cedb9d9b5a223409c68ddfa # v5.0.0
-        with:
-          username: ${{ secrets.docker-username }}
-          password: ${{ secrets.docker-password }}
-          repository: ${{ inputs.image-name }}
+      # - name: Publish README to Docker Hub
+      #   if: github.event_name != 'pull_request'
+      #   uses: peter-evans/dockerhub-description@1b9a80c056b620d92cedb9d9b5a223409c68ddfa # v5.0.0
+      #   with:
+      #     username: ${{ secrets.docker-username }}
+      #     password: ${{ secrets.docker-password }}
+      #     repository: ${{ inputs.image-name }}
