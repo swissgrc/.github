@@ -8,7 +8,7 @@ Here you will find:
 🐳 [Docker images](https://github.com/swissgrc/docker-azure-pipelines) for using in [Azure Pipelines Container Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
 
 * [`azure-pipelines-terra`](https://github.com/swissgrc/docker-azure-pipelines) — L1 foundation (Docker CLI, Git, jq, yq, …)
-* [`azure-pipelines-vulcan`](https://github.com/swissgrc/docker-azure-pipelines) — L2 build runtimes (.NET, Node.js)
+* [`azure-pipelines-vulcan`](https://github.com/swissgrc/docker-azure-pipelines) — L2 build runtimes (.NET, Node.js, Python, …)
 * [`azure-pipelines-janus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 deployment (Azure CLI, Terraform, Packer, Helm, kubectl)
 * [`azure-pipelines-mercury`](https://github.com/swissgrc/docker-azure-pipelines) — L3 end-to-end testing (Playwright)
 * [`azure-pipelines-hermes`](https://github.com/swissgrc/docker-azure-pipelines) — L3 dependency updates (Renovate)
