@@ -5,92 +5,44 @@ You can find out more about our company and products at [swissgrc.com](https://s
 
 Here you will find:
 
-🐳 Docker images for using in [Azure Pipelines Container Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
+🐳 [Docker images](https://github.com/swissgrc/docker-azure-pipelines) for using in [Azure Pipelines Container Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
 
-* [Docker CLI](https://github.com/swissgrc/docker-azure-pipelines-dockercli)
-* [Git](https://github.com/swissgrc/docker-azure-pipelines-git)
-* [.NET 9](https://github.com/swissgrc/docker-azure-pipelines-dotnet-9) | [.NET 10](https://github.com/swissgrc/docker-azure-pipelines-dotnet-10)
-* [Node.js 22 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node22-net9)
-* [Node.js 24 with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-node24-net9) | [Node.js 24 with .NET 10](https://github.com/swissgrc/docker-azure-pipelines-node24-net10)
-* [Azure CLI with .NET 9](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9) | [Azure CLI with .NET 10](https://github.com/swissgrc/docker-azure-pipelines-azurecli-net10)
-* [Terraform](https://github.com/swissgrc/docker-azure-pipelines-terraform)
-* [Packer](https://github.com/swissgrc/docker-azure-pipelines-packer)
-* [Helm](https://github.com/swissgrc/docker-azure-pipelines-helm)
-* [Playwright](https://github.com/swissgrc/docker-azure-pipelines-playwright)
-* [Markdownlint](https://github.com/swissgrc/docker-azure-pipelines-markdownlint)
-* [Renovate](https://github.com/swissgrc/docker-azure-pipelines-renovate)
+* [`azure-pipelines-terra`](https://github.com/swissgrc/docker-azure-pipelines) — L1 foundation (Docker CLI, Git, jq, yq, …)
+* [`azure-pipelines-vulcan`](https://github.com/swissgrc/docker-azure-pipelines) — L2 build runtimes (.NET, Node.js, Python, …)
+* [`azure-pipelines-janus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 deployment (Azure CLI, Terraform, Packer, Helm, kubectl)
+* [`azure-pipelines-mercury`](https://github.com/swissgrc/docker-azure-pipelines) — L3 end-to-end testing (Playwright)
+* [`azure-pipelines-hermes`](https://github.com/swissgrc/docker-azure-pipelines) — L3 dependency updates (Renovate)
 
 ```mermaid
 graph TB
-    docker[azure-pipelines-dockercli]
-    click docker "https://github.com/swissgrc/docker-azure-pipelines-dockercli"
+    terra[azure-pipelines-terra]
+    click terra "https://github.com/swissgrc/docker-azure-pipelines"
 
-    git[azure-pipelines-git]
-    click git "https://github.com/swissgrc/docker-azure-pipelines-git"
+    vulcan[azure-pipelines-vulcan]
+    click vulcan "https://github.com/swissgrc/docker-azure-pipelines"
 
-    dotnet9[azure-pipelines-dotnet<br>9.x.x]
-    click dotnet9 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-9"
-    dotnet10[azure-pipelines-dotnet<br>10.x.x]
-    click dotnet10 "https://github.com/swissgrc/docker-azure-pipelines-dotnet-10"
+    janus[azure-pipelines-janus]
+    click janus "https://github.com/swissgrc/docker-azure-pipelines"
 
-    node22_9[azure-pipelines-node<br>22.x.x-net9]
-    click node22_9 "https://github.com/swissgrc/docker-azure-pipelines-node22-net9"
-    node24_9[azure-pipelines-node<br>24.x.x-net9]
-    click node24_9 "https://github.com/swissgrc/docker-azure-pipelines-node24-net9"
-    node24_10[azure-pipelines-node<br>24.x.x-net10]
-    click node24_10 "https://github.com/swissgrc/docker-azure-pipelines-node24-net10"
+    mercury[azure-pipelines-mercury]
+    click mercury "https://github.com/swissgrc/docker-azure-pipelines"
 
-    az9[azure-pipelines-azurecli<br>x.y.z-net9]
-    click az9 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net9"
-    az10[azure-pipelines-azurecli<br>x.y.z-net10]
-    click az10 "https://github.com/swissgrc/docker-azure-pipelines-azurecli-net10"
+    hermes[azure-pipelines-hermes]
+    click hermes "https://github.com/swissgrc/docker-azure-pipelines"
 
-    terraform[azure-pipelines-terraform]
-    click terraform "https://github.com/swissgrc/docker-azure-pipelines-terraform"
-    packer[azure-pipelines-packer]
-    click packer "https://github.com/swissgrc/docker-azure-pipelines-packer"
-    helm[azure-pipelines-helm]
-    click helm "https://github.com/swissgrc/docker-azure-pipelines-helm"
-
-    playwright[azure-pipelines-playwright]
-    click playwright "https://github.com/swissgrc/docker-azure-pipelines-playwright"
-
-    markdownlint[azure-pipelines-markdownlint]
-    click markdownlint "https://github.com/swissgrc/docker-azure-pipelines-markdownlint"
-
-    renovate[azure-pipelines-renovate]
-    click renovate "https://github.com/swissgrc/docker-azure-pipelines-renovate"
-
-    %% External Images
-    nodejs[Official Node.js Image]
-    click nodejs "https://hub.docker.com/_/node"
+    %% External base image
+    debian[debian:13-slim]
+    click debian "https://hub.docker.com/_/debian"
 
     %% Inheritance relationships (top-down)
-    docker --> git
-
-    git --> dotnet9
-    git --> dotnet10
-
-    dotnet9 --> node22_9
-    dotnet9 --> node24_9    
-    dotnet10 --> node24_10
-
-    dotnet9 --> az9
-    dotnet10 --> az10
-
-    az9 --> terraform
-    az9 --> packer
-    az9 --> helm
-
-    node24_9 --> playwright
-
-    nodejs --> markdownlint
-
-    node24_9 --> renovate
+    debian --> terra
+    terra --> vulcan
+    vulcan --> janus
+    vulcan --> mercury
+    vulcan --> hermes
 ```
 
-Images are available from [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container)
-or [Docker Hub](https://hub.docker.com/u/swissgrc).
+Images are available from the [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container) under `ghcr.io/swissgrc/`.
 
 🧩 NuGet packages:
 
