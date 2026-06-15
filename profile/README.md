@@ -12,6 +12,7 @@ Here you will find:
 * [`azure-pipelines-janus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 deployment (Azure CLI, Terraform, Packer, Helm, kubectl)
 * [`azure-pipelines-mercury`](https://github.com/swissgrc/docker-azure-pipelines) — L3 end-to-end testing (Playwright)
 * [`azure-pipelines-hermes`](https://github.com/swissgrc/docker-azure-pipelines) — L3 dependency updates (Renovate)
+* [`azure-pipelines-sancus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 code signing
 
 ```mermaid
 graph TB
@@ -30,6 +31,9 @@ graph TB
     hermes[azure-pipelines-hermes]
     click hermes "https://github.com/swissgrc/docker-azure-pipelines"
 
+    sancus[azure-pipelines-sancus]
+    click sancus "https://github.com/swissgrc/docker-azure-pipelines"
+
     %% External base image
     debian[debian:13-slim]
     click debian "https://hub.docker.com/_/debian"
@@ -40,6 +44,7 @@ graph TB
     vulcan --> janus
     vulcan --> mercury
     vulcan --> hermes
+    vulcan --> sancus
 ```
 
 Images are available from the [GitHub Container Registry](https://github.com/orgs/swissgrc/packages?ecosystem=container) under `ghcr.io/swissgrc/`.
