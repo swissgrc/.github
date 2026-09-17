@@ -1,7 +1,15 @@
-# GitHub default configuration files
+# GitHub organization configuration
 
-Repository for default configuration files for the [swissgrc GitHub organization](https://github.com/swissgrc).
+Organization-level repository for the [swissgrc GitHub organization](https://github.com/swissgrc).
 
-Configuration files from this repository will be used for all repository in the organization which does not contain own files of that type.
+## Contents
 
-For a list of supported file types see [documentation](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/creating-a-default-community-health-file#supported-file-types)
+* [`profile/README.md`](profile/README.md) — the organization profile page shown on [github.com/swissgrc](https://github.com/swissgrc).
+* [`.github/CODEOWNERS`](.github/CODEOWNERS) — code owners for this repository only; `CODEOWNERS` is not inherited by other repositories.
+* [`.github/renovate.json`](.github/renovate.json) — Renovate configuration for this repository only; shared presets live in [swissgrc/renovate-presets](https://github.com/swissgrc/renovate-presets).
+
+## Default community health files
+
+GitHub also reads organization-wide defaults from this repository: a [supported community health file](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file) placed here applies to every repository in the organization which does not contain its own file of that type.
+
+None are currently defined — every repository carries its own. `LICENSE` and `CODEOWNERS` are not supported types and always stay per-repository.
