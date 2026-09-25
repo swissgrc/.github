@@ -5,34 +5,34 @@ You can find out more about our company and products at [swissgrc.com](https://s
 
 Here you will find:
 
-🐳 [Docker images](https://github.com/swissgrc/docker-azure-pipelines) for using in [Azure Pipelines Container Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
+🐳 [Docker images](https://github.com/swissgrc/docker-azure-pipelines) for using in [Azure Pipelines Container Jobs](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/container-phases):
 
-* [`azure-pipelines-terra`](https://github.com/swissgrc/docker-azure-pipelines) — L1 foundation (Docker CLI, Git, jq, yq, …)
-* [`azure-pipelines-vulcan`](https://github.com/swissgrc/docker-azure-pipelines) — L2 build runtimes (.NET, Node.js, Python, …)
-* [`azure-pipelines-janus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 deployment (Azure CLI, Terraform, Packer, Helm, kubectl)
-* [`azure-pipelines-mercury`](https://github.com/swissgrc/docker-azure-pipelines) — L3 end-to-end testing (Playwright)
-* [`azure-pipelines-hermes`](https://github.com/swissgrc/docker-azure-pipelines) — L3 dependency updates (Renovate)
-* [`azure-pipelines-sancus`](https://github.com/swissgrc/docker-azure-pipelines) — L3 code signing
+* [`azure-pipelines-terra`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-terra) — L1 foundation (Docker CLI, Git, jq, yq, …)
+* [`azure-pipelines-vulcan`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-vulcan) — L2 build runtimes (.NET, Node.js, Python, …)
+* [`azure-pipelines-janus`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-janus) — L3 deployment (Azure CLI, Terraform, Packer, Helm, kubectl)
+* [`azure-pipelines-mercury`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-mercury) — L3 end-to-end testing (Playwright)
+* [`azure-pipelines-hermes`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-hermes) — L3 dependency updates (Renovate)
+* [`azure-pipelines-sancus`](https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-sancus) — L3 code signing
 
 ```mermaid
 graph TB
     terra[azure-pipelines-terra]
-    click terra "https://github.com/swissgrc/docker-azure-pipelines"
+    click terra "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-terra"
 
     vulcan[azure-pipelines-vulcan]
-    click vulcan "https://github.com/swissgrc/docker-azure-pipelines"
+    click vulcan "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-vulcan"
 
     janus[azure-pipelines-janus]
-    click janus "https://github.com/swissgrc/docker-azure-pipelines"
+    click janus "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-janus"
 
     mercury[azure-pipelines-mercury]
-    click mercury "https://github.com/swissgrc/docker-azure-pipelines"
+    click mercury "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-mercury"
 
     hermes[azure-pipelines-hermes]
-    click hermes "https://github.com/swissgrc/docker-azure-pipelines"
+    click hermes "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-hermes"
 
     sancus[azure-pipelines-sancus]
-    click sancus "https://github.com/swissgrc/docker-azure-pipelines"
+    click sancus "https://github.com/swissgrc/docker-azure-pipelines/pkgs/container/azure-pipelines-sancus"
 
     %% External base image
     debian[debian:13-slim]
