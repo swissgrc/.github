@@ -53,10 +53,6 @@ Images are available from the [GitHub Container Registry](https://github.com/org
 
 * [Statiq.Alerts](https://github.com/swissgrc/Statiq.Alerts)
 
-📦 NPM packages:
-
-* [PostCSS plugin to remove font faces formats](https://github.com/swissgrc/postcss-remove-font-face-format)
-
 🍫 Chocolatey packages:
 
 * [Public Chocolatey packages maintained by Swiss GRC](https://github.com/swissgrc/chocolatey-packages)
